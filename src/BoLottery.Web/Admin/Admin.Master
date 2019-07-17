@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="TygaSoft.Web.Admin.Admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>英格蘭皇家俱樂部 后台管理 技術支持： 天涯孤岸 个人网站首选 qq283335746</title>
+    <link href="/Styles/Main.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/plugins/jeasyui/themes/default/easyui.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/plugins/jeasyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/Admin.css" rel="stylesheet" type="text/css" />
+    <script src="/Scripts/jquery/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="/Scripts/plugins/jeasyui/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="/Scripts/plugins/jeasyui/locale/easyui-lang-zh_TW.js" type="text/javascript"></script>
+    <script src="/Scripts/JeasyuiExtend.js" type="text/javascript"></script>
+    <script src="/Scripts/JeasyuiHelper.js" type="text/javascript"></script>
+    <script src="/Scripts/Menus.js" type="text/javascript"></script>
+    <script src="/Scripts/JsHelper.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body id="body" class="easyui-layout" data-options="fit:true">
+  <form id="form1" runat="server">
+    <!--header begin-->
+    <div data-options="region:'north',title:'',split:true" style="height:68px; border-top:none; background-color:#E0ECFF;">
+       <div style="height:29px; line-height:29px;background:#E0ECFF;border-bottom: 1px solid #95B8E7; overflow:hidden; padding:0 5px 0 5px;">
+            英格蘭皇家俱樂部後臺管理系統-- 當前位置：<asp:SiteMapPath ID="SitePaths" runat="server" />
+            <ul class="fr h_ul">
+                <li>
+                    <asp:LoginName ID="lnUser" runat="server" FormatString="欢迎您，{0}" />
+                </li>
+                <li class="ml10">可用總額：<span id="lbUserTotalPrice">0</span></li>
+                <li class="ml10">剩余額度：<span id="lbRemainPrice">0</span></li>
+            </ul>
+            
+        </div>
+       <div class="clr"></div>
+       <div class="easyui-panel" data-options="border:false" style="background:#E0ECFF;height:30px; line-height:30px; overflow:hidden;">
+            <a href="javascript:void(0)" class="easyui-menubutton" data-options="menu:'#mf'">文件</a>
+            <a href="javascript:void(0)" class="easyui-menubutton" data-options="menu:'#mm'" id="mb">編輯</a>
+            <a href="javascript:void(0)" class="easyui-menubutton" data-options="menu:'#mh'">幫助</a>
+
+            <a id="abtnNew" href="javascript:void(0)" title="新建" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-add'">新建</a>
+            <a id="abtnEdit" href="javascript:void(0)" title="編輯" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-edit'">編輯</a>
+            <a id="abtnSave" href="javascript:void(0)" title="保存" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-save'">保存</a>
+            <a id="abtnDel" href="javascript:void(0)" title="删除" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-cancel'">删除</a>
+            <a id="abtnBack" href="javascript:void(0)" title="返回" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-back'" onclick="history.go(-1);">返回</a>
+
+            <div id="mf">
+                <div id="btnNew" data-options="iconCls:'icon-add'">新建</div>
+                <div id="btnSave" data-options="iconCls:'icon-save'">保存</div>
+                <div id="btnExit" data-options="iconCls:'icon-remove'">
+                    <asp:LoginStatus ID="lsUser" runat="server" LogoutText="退出" />
+                </div>
+            </div>
+            <div id="mm" style="width:90px;">
+                <div id="btnBack" data-options="iconCls:'icon-back'" onclick="history.go(-1);">返回</div>
+            </div>
+            <div id="mh" style="width:90px;">
+                <div id="btnHelp" data-options="iconCls:'icon-help'">幫助</div>
+            </div>
+        </div>
+    </div>
+    <!--header end-->
+    <!--pagemain begin-->
+    <div id="east" data-options="region:'east',split:true" title="菜單導航" style="width:230px; padding:10px 5px;">
+        <ul id="eastTree" class="easyui-tree"></ul>
+    </div>
+    <div id="center" data-options="region:'center',title:'',split:true" style="padding:5px;">
+        <asp:ContentPlaceHolder ID="cphMain" runat="server" />
+    </div>
+    <!--pagemain end-->
+    <!--footer begin-->
+    <div data-options="region:'south',title:'',split:true" style="height:30px; background-color:#E0ECFF; padding-top:5px;">
+        <div class="tc">Copyright © 2014-2014 天涯孤岸版权所有</div>
+    </div>
+    <!--footer end-->
+    </form>
+
+    <script type="text/javascript">
+        $(function () {
+            jsHelper.GetUserPrice();
+            AdminMenus.Init();
+        })
+    </script>
+    
+</body>
+</html>

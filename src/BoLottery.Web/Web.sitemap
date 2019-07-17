@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="/" title="首頁"  description="" roles="*">
+      <siteMapNode url="" title="幫助中心" description="" roles="*">
+        <siteMapNode url="~/Shares/AboutSite/Default.aspx" title="幫助中心" description="" roles="*"></siteMapNode>
+      </siteMapNode>
+
+      <siteMapNode url="/u" title="會員中心" description="" roles="Users">
+        <siteMapNode url="/u/t" title="八大明星戰神（四十選八）" description="hide" roles="Users"></siteMapNode>
+        <siteMapNode url="/u/y" title="十二星宮（十二選五）" description="hide" roles="Users"></siteMapNode>
+        <siteMapNode url="/u/g" title="皇家馬場（二十七選三）" description="hide" roles="Users"></siteMapNode>
+        <siteMapNode url="/u/a" title="開設管理員" description="" roles="二級管理員"></siteMapNode>
+        <siteMapNode url="/u/tg" title="設置管理員" description="hide" roles="二級管理員"></siteMapNode>
+        <siteMapNode url="/u/ta" title="開設用戶" description="" roles="三級管理員"></siteMapNode>
+        <siteMapNode url="/u/tt" title="設置用戶" description="hide" roles="三級管理員"></siteMapNode>
+        <siteMapNode url="/u/at" title="下級用戶當日統計" description="" roles="Users"></siteMapNode>
+        <siteMapNode url="/u/yy" title="我的遊戲記錄" description="" roles="Users"></siteMapNode>
+        <siteMapNode url="/u/psw" title="修改密碼" description="" roles="Users"></siteMapNode>
+        <siteMapNode url="1" title="國內彩種" description="" roles=""></siteMapNode>
+      </siteMapNode>
+      
+      <siteMapNode url="~/Admin/Default.aspx" title="後臺管理" description="" roles="Administrators">
+        <siteMapNode url="~/Admin/MyPrice.aspx" title="我的額度" description="" roles="Administrators"></siteMapNode>
+        <siteMapNode url="~/Admin/Category/ListCategory.aspx" title="分類管理" description="hide" roles="Administrators"></siteMapNode>
+
+        <siteMapNode url="" title="遊戲管理" description="" roles="Administrators">
+          <siteMapNode url="~/Admin/Game/AddManager.aspx" title="設置管理員" description="" roles="Administrators"></siteMapNode>
+          <siteMapNode url="~/Admin/Game/ListManager.aspx" title="管理員列表" description="" roles="Administrators"></siteMapNode>
+          <siteMapNode url="~/Admin/Game/ListTicketRunEnd.aspx" title="用戶投注" description="" roles="Administrators"></siteMapNode>
+          <siteMapNode url="~/Admin/Game/ListUserDayLotter.aspx" title="用戶投注當日統計" description="" roles="Administrators"></siteMapNode>
+          <siteMapNode url="~/Admin/Game/ListRealTimeTicketRun.aspx" title="開獎統計" description="" roles="Administrators"></siteMapNode>
+        </siteMapNode>
+        
+        <siteMapNode url="" title="內容管理" description="" roles="Administrators">
+          <siteMapNode url="~/Admin/AboutSite/ListContentType.aspx" title="內容類型" description="" roles="Administrators"></siteMapNode>
+          <siteMapNode url="~/Admin/AboutSite/ListContent.aspx" title="內容列表" description="" roles="Administrators"></siteMapNode>
+          <siteMapNode url="~/Admin/AboutSite/AddContent.aspx" title="新建/編輯內容" description="hide" roles="Administrators"></siteMapNode>
+        </siteMapNode>
+
+        <siteMapNode url="" title="用戶角色管理" description="" roles="Administrators">
+          <siteMapNode url="~/Admin/Members/ListUsers.aspx" title="用戶列表" description="" roles="Administrators">
+            <siteMapNode url="~/Admin/Members/AddUserRole.aspx" title="用戶角色關係分配" description="hide" roles="Administrators"></siteMapNode>
+          </siteMapNode>
+          <siteMapNode url="~/Admin/Members/AddUser.aspx" title="新建/修改用户" description="hide" roles="Administrators"></siteMapNode>
+          <siteMapNode url="~/Admin/Members/ListRoles.aspx" title="角色列表" description="" roles="Administrators">
+            <siteMapNode url="~/Admin/Members/AddRoleUser.aspx" title="角色用戶關係分配" description="hide" roles="Administrators"></siteMapNode>
+          </siteMapNode>
+          <siteMapNode url="~/Admin/Members/AddRole.aspx" title="新建/修改角色" description="hide" roles="Administrators"></siteMapNode>
+          <siteMapNode url="~/Admin/Members/UpdatePsw.aspx" title="修改密碼" description="" roles="Administrators"></siteMapNode>
+        </siteMapNode>
+
+        <siteMapNode url="" title="系統管理" description="" roles="Administrators">
+          <siteMapNode url="~/Admin/Sys/ListSysEnum.aspx" title="枚舉項管理" description="" roles="Administrators"></siteMapNode>
+        </siteMapNode>
+      </siteMapNode>
+        
+    </siteMapNode>
+</siteMap>
